@@ -1,0 +1,20 @@
+name: Build PDF
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get install -y pandoc texlive-latex-recommended texlive-fonts-recommended
+      - run: cat chapters/*.md > book-full.md
+      - run: |
+          pandoc book-full.md --pdf-engine=pdflatex --toc --output=book.pdf \
+            --metadata title="$(head -1 README.md | sed 's/# //')" \
+            --metadata author="Jesus Ariel Gonzalez Bonilla"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: book-pdf
+          path: book.pdf
