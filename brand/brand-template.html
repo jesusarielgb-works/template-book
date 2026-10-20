@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JAG Brand Template v1.1</title>
+  <meta name="author" content="Jesús Ariel González Bonilla">
+  <link rel="license" href="https://opensource.org/licenses/MIT">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/brand.css">
+  <script type="application/ld+json" id="jsonld">{}</script>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ══ SIDEBAR ══════════════════════════════════════ -->
+  <aside class="sidebar">
+    <div class="brand-mark">
+      <div class="monogram">JAG</div>
+      <div class="brand-name">
+        Jesús Ariel<br>González B.
+        <span>Software Architect · Author</span>
+      </div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-label">Palette</div>
+      <div class="swatch"><div class="swatch-dot" style="background:#1A2B4A"></div> Navy <code>#1A2B4A</code></div>
+      <div class="swatch"><div class="swatch-dot" style="background:#E8531E"></div> Sienna <code>#E8531E</code></div>
+      <div class="swatch"><div class="swatch-dot" style="background:#2D7D6F"></div> Teal <code>#2D7D6F</code></div>
+      <div class="swatch"><div class="swatch-dot" style="background:#FAFAF8;border:1px solid rgba(255,255,255,.2)"></div> Ivory <code>#FAFAF8</code></div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-label">Typography</div>
+      <div class="ts-row">
+        <div class="ts-sample" style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700">Playfair Display</div>
+        <div class="ts-meta">Display · Titles · Cover</div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-sample" style="font-family:'Source Serif 4',serif;font-size:.9rem">Source Serif 4</div>
+        <div class="ts-meta">Body · Articles · Books</div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-sample" style="font-family:'Source Sans 3',sans-serif;font-size:.9rem">Source Sans 3</div>
+        <div class="ts-meta">Body · Technical Docs</div>
+      </div>
+      <div class="ts-row">
+        <div class="ts-sample" style="font-family:'JetBrains Mono',monospace;font-size:.75rem">JetBrains Mono</div>
+        <div class="ts-meta">Code · Meta · Labels</div>
+      </div>
+    </div>
+
+    <div class="sb-section">
+      <div class="sb-label">Document type</div>
+      <button class="doc-btn active" onclick="switchMode('technical')" id="btn-technical">📋 Technical Doc</button>
+      <button class="doc-btn" onclick="switchMode('article')" id="btn-article">✍️ Article / Essay</button>
+      <button class="doc-btn" onclick="switchMode('book')" id="btn-book">📖 Book Chapter</button>
+    </div>
+
+    <div class="sb-footer">
+      jesusarielgb-works<br>
+      github.com/ariel5253<br>
+      Brand Template v1.1
+    </div>
+  </aside>
+
+  <!-- ══ TOPBAR ════════════════════════════════════════ -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <strong id="doc-mode-label">Technical Documentation</strong>
+      &nbsp;·&nbsp; JAG Brand Template v1.1
+    </div>
+    <div class="topbar-actions">
+      <button class="btn btn-ghost" onclick="window.print()">Print / PDF</button>
+      <button class="btn btn-primary" id="btn-copy" onclick="copyHTML()">Copy standalone HTML</button>
+    </div>
+  </header>
+
+  <!-- ══ CANVAS ════════════════════════════════════════ -->
+  <main class="canvas">
+
+    <!-- ── TECHNICAL DOC ──────────────────────────────── -->
+    <article class="doc doc--technical visible" id="doc-technical">
+      <div class="doc-header">
+        <div class="doc-type-label">Technical Documentation · MGF v1.0.0</div>
+        <h1 class="doc-title">Microservices Governance Framework</h1>
+        <div class="doc-subtitle">A construction model for building microservices from domain to operations</div>
+        <div class="doc-meta">
+          <span><strong>Author</strong> Jesús Ariel González Bonilla</span>
+          <span><strong>Version</strong> 1.0.0</span>
+          <span><strong>Date</strong> August 2026</span>
+          <span><strong>License</strong> <span class="license-tag">MIT License</span></span>
+        </div>
+      </div>
+      <div class="doc-body">
+        <h2>Overview</h2>
+        <p>The Microservices Governance Framework (MGF) is a structured guide for teams building distributed systems. It organizes twenty numbered sections with explicit dependency rules — from understanding the business domain to operating services in production.</p>
+        <p>Unlike a collection of articles, the MGF is a <em>construction model</em>: a sequence of decisions, artefacts, and governance rules a team follows to build a software system in an ordered, traceable, and reproducible way.</p>
+
+        <div class="callout">
+          <div class="callout-label">Key principle</div>
+          Ideas are not protected; their original selection, arrangement, and expression are. The MGF does not own DDD, C4, or hexagonal architecture — it owns the orchestration.
+        </div>
+
+        <h2>Section dependency model</h2>
+        <p>Each section depends on its predecessors. Architecture cannot be written before the domain is mapped; API contracts cannot be specified before the architecture is defined.</p>
+
+        <pre><code>domain → product → requirements
+             ↓
+        architecture → api → quality
+             ↓
+         operations ← devops</code></pre>
+
+        <h3>Supported stacks</h3>
+        <table>
+          <thead><tr><th>Stack</th><th>Guide</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Go</td><td><code>_stacks/go.md</code></td><td>Available</td></tr>
+            <tr><td>Java Spring</td><td><code>_stacks/java-spring.md</code></td><td>Available</td></tr>
+            <tr><td>Node / TypeScript</td><td><code>_stacks/node-typescript.md</code></td><td>Available</td></tr>
+            <tr><td>Python FastAPI</td><td><code>_stacks/python-fastapi.md</code></td><td>Available</td></tr>
+          </tbody>
+        </table>
+
+        <div class="decision">
+          <div class="decision-label">ADR-001 — English as documentation language</div>
+          Decision: All framework artefacts are written in English.<br>
+          Status: Accepted · Author: Jesús Ariel González Bonilla · 2026-08-20
+        </div>
+
+        <blockquote>One governance source, multiple stacks. The abstraction is the original contribution.</blockquote>
+      </div>
+      <div class="doc-footer">
+        <div class="doc-footer-brand">
+          <div class="footer-mark">J</div>
+          Jesús Ariel González Bonilla
+        </div>
+        <span class="footer-suffix">jesusarielgb-works · MIT License · 2026</span>
+      </div>
+    </article>
+
+    <!-- ── ARTICLE ─────────────────────────────────────── -->
+    <article class="doc doc--article" id="doc-article">
+      <div class="doc-header">
+        <div class="doc-type-label">Article · Software Architecture</div>
+        <h1 class="doc-title">Why Governance Matters Before the First Line of Code</h1>
+        <div class="doc-subtitle">The hidden cost of teams that build without a shared model of what "done" means</div>
+        <div class="doc-meta">
+          <span><strong>Author</strong> Jesús Ariel González Bonilla</span>
+          <span><strong>Published</strong> August 2026</span>
+          <span><strong>Reading time</strong> 8 min</span>
+          <span><strong>License</strong> <span class="license-tag">CC BY 4.0</span></span>
+        </div>
+      </div>
+      <div class="doc-body">
+        <h2>The problem no one names</h2>
+        <p>Most software teams fail not because of bad code, but because of bad agreement. They disagree — silently — on what a bounded context is, on whether a service needs a runbook, on who decides when an API contract is ready. They discover the disagreement in production.</p>
+
+        <p>Governance is the word we use when we mean: <em>the explicit agreement about how we build, in what order, with what evidence that we are done</em>. It is not bureaucracy. It is the shared model that makes speed possible.</p>
+
+        <h2>The cost of implicit models</h2>
+        <p>Every team has a model. The question is whether it is written down or lives only in the heads of the three people who were there at the beginning.</p>
+
+        <blockquote>"A system without explicit governance is governed by whoever writes the next commit."</blockquote>
+
+        <p>When the implicit model breaks — and it always breaks when the team grows or when those three people leave — the reconstruction cost is almost always higher than the original investment in documentation would have been.</p>
+
+        <div class="admonition">
+          <div class="admonition-label">Important</div>
+          Governance is not documentation for its own sake. It is the minimum set of shared decisions that lets the team move independently without constant synchronisation overhead.
+        </div>
+
+        <h3>What an explicit model buys you</h3>
+        <ul>
+          <li>New engineers reach production-ready in days, not months</li>
+          <li>Architecture decisions are traceable — you can answer <em>why</em></li>
+          <li>Quality gates are known before the sprint starts</li>
+        </ul>
+      </div>
+      <div class="doc-footer">
+        <div class="doc-footer-brand">
+          <div class="footer-mark">J</div>
+          Jesús Ariel González Bonilla
+        </div>
+        <span class="footer-suffix">jesusarielgb-works · CC BY 4.0 · 2026</span>
+      </div>
+    </article>
+
+    <!-- ── BOOK CHAPTER ────────────────────────────────── -->
+    <article class="doc doc--book" id="doc-book">
+
+      <!-- Rights page -->
+      <div class="rights-page">
+        <h2>Rights &amp; Publication Information</h2>
+        <dl class="rights-fields">
+          <dt>Title</dt>         <dd>Software Without Borders</dd>
+          <dt>Author</dt>        <dd>Jesús Ariel González Bonilla</dd>
+          <dt>Year</dt>          <dd>2026</dd>
+          <dt>Edition</dt>       <dd>1st edition</dd>
+          <dt>Version</dt>       <dd>1.0.0</dd>
+          <dt>Publisher</dt>     <dd>jesusarielgb-works (independent)</dd>
+          <dt>URL</dt>           <dd class="pending">PENDING — canonical URL</dd>
+          <dt>Citation</dt>      <dd class="pending">PENDING — suggested citation format</dd>
+          <dt>ISBN</dt>          <dd class="pending">PENDING (optional)</dd>
+          <dt>DOI</dt>           <dd class="pending">PENDING (optional)</dd>
+          <dt>Errata</dt>        <dd class="pending">PENDING — errata URL</dd>
+          <dt>Editable</dt>      <dd class="pending">PENDING — editable format URL</dd>
+        </dl>
+        <div class="cc-statement">
+          <p>© 2026 Jesús Ariel González Bonilla.<br>
+          This work is licensed under Creative Commons Attribution 4.0 International — CC BY 4.0.<br>
+          <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+          <p style="margin-top:.75rem;font-size:.78rem;">
+            Where this book includes original code examples: MIT License.<br>
+            Third-party content: see individual credits.
+          </p>
+        </div>
+      </div>
+
+      <div class="doc-header">
+        <div class="doc-type-label">Book · Chapter 1</div>
+        <h1 class="doc-title">The Architecture of Knowledge</h1>
+        <div class="doc-subtitle">How software teams encode what they know — and what happens when they don't</div>
+        <div class="doc-meta">
+          <span><strong>Author</strong> Jesús Ariel González Bonilla</span>
+          <span><strong>Series</strong> Software Without Borders</span>
+          <span><strong>License</strong> <span class="license-tag">CC BY 4.0</span></span>
+        </div>
+      </div>
+      <div class="doc-body">
+        <h2>Chapter 1 · The invisible architecture</h2>
+        <p>Before there is a system, there is a decision. Before the decision, there is a model — usually unspoken, usually incomplete, always consequential. This book is about making that model visible.</p>
+        <p>I have spent years watching teams build software that works and software that fails, and the difference is rarely the technology. The difference is almost always whether the team had a shared, explicit model of what they were building and why.</p>
+
+        <div class="callout">
+          <div class="callout-label">What this book is about</div>
+          This is not a book about tools, frameworks, or languages. It is a book about the decisions that precede all of those — and the discipline of writing them down.
+        </div>
+
+        <h2>The apprenticeship problem</h2>
+        <p>In a traditional craft, knowledge passes through apprenticeship. The master does the work; the apprentice watches, asks questions, gradually earns the right to do more. The model is transferred through proximity and time.</p>
+        <p>Software does not work this way — and cannot, at scale. A team of fifty engineers cannot all apprentice under the three who know why the system is the way it is. The knowledge must be written.</p>
+
+        <blockquote>The goal of documentation is not to record what was built. It is to transfer the model that made it possible to build it.</blockquote>
+
+        <p>This is the distinction that most documentation fails to make. A README that says what a service does is not governance. A document that says why the service was built this way, what constraints it must satisfy, and what must be true before changing it — that is governance.</p>
+      </div>
+      <div class="doc-footer">
+        <div class="doc-footer-brand">
+          <div class="footer-mark">J</div>
+          Jesús Ariel González Bonilla
+        </div>
+        <span class="footer-suffix">Software Without Borders · CC BY 4.0 · 2026</span>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<script src="js/brand.js"></script>
+</body>
+</html>

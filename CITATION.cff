@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this book, please cite it as below."
+type: book
+title: "[Book Title]"
+version: "edition-1"
+authors:
+  - family-names: "González Bonilla"
+    given-names: "Jesús Ariel"
+license: CC-BY-4.0
+repository-code: "https://github.com/jesusarielgb-works/[repo-name]"

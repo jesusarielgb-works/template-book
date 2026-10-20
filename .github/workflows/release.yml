@@ -11,10 +11,10 @@ jobs:
       - uses: actions/checkout@v4
       - run: sudo apt-get install -y pandoc texlive-latex-recommended texlive-fonts-recommended
       - run: |
-          cat chapters/*.md > book-full.md
-          pandoc book-full.md --pdf-engine=pdflatex --toc --output=book.pdf \
+          ls front-matter/*.md chapters/*.md
+          pandoc front-matter/*.md chapters/*.md --pdf-engine=pdflatex --toc --output=book.pdf \
             --metadata title="$(head -1 README.md | sed 's/# //')" \
-            --metadata author="Jesus Ariel Gonzalez Bonilla"
+            --metadata author="Jesús Ariel González Bonilla"
       - uses: softprops/action-gh-release@v2
         with:
           files: book.pdf
